@@ -1,13 +1,13 @@
 <template>
   <div>
-    <RouterView/>
 
-
+    <h1 class="bg-blue-500">Hello wolrd</h1>
+  <router-view/>
   </div>
+ 
 </template>
 
 <script setup >
-import { RouterView } from 'vue-router';
 </script>
 
 <style>
