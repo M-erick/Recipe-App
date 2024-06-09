@@ -8,22 +8,8 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
-      <div v-for="meal of meals" :key="meal.idMeal" class="bg-white shadow rounded-xl">
-        <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
-          <img :src="meal.strMealThumb" :alt="meal.strMeal" class="rounded-t-xl h-48 w-full object-cover">
-
-        </router-link>
-
-        <div class="px-3">
-          <h3 class="font-semibold">{{ meal.strMeal }}</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut vero mollitia provident possimus.</p>
-          <div class="flex items-center justify-between">
-           
-            <YouTube :href="meal.strYoutube">YouTube</YouTube>
-
-          </div>
-        </div>
-      </div>
+      
+      <MealItem v-for="meal of meals"  :key="meal.idMeal" :meal="meal"/>
     </div>
   </div>
 
@@ -33,7 +19,8 @@
 import store from '@/store';
 import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import YouTube from '@/components/YouTubeButton.vue';
+import MealItem from '@/components/MealItem.vue'
+
 const route = useRoute();
 const keyword = ref('');
 const meals = computed(() => store.state.searchedMeals);
