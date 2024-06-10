@@ -36,8 +36,11 @@ const loading = ref(true);
 const meal = ref({});
 
 const shortInstructions = computed(() => {
+  const instructions = meal?.value?.strInstructions || 'Click to view more';
+  return instructions.split(' ').slice(0, 20).join(' ') + ' ...';
 
-  return meal.value.strInstructions.split(' ').slice(0, 20).join(' ') + ' ...';
+
+
 });
 
 onMounted(() => {
