@@ -10,10 +10,10 @@
     <div v-if="loading">
       <IngredientSkeleton />
     </div>
-    <div v-else>
+    <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-3">
       <router-link :to="{ name: 'byIngredients', params: { ingredient: ingredient.strIngredient } }"
         v-for="ingredient of computedIngredients" :key="ingredient.idIngredient"
-        class="block bg-white rounded p-3 mb-3 shadow">
+        class="block bg-white rounded p-3 mb-3 shadow transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer border">
         <h3 class="text-2xl font-bold mb-2">{{ ingredient.strIngredient }}</h3>
         <!-- <p>{{ ingredient.strDescription }}</p> -->
       </router-link>
