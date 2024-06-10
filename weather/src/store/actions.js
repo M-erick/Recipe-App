@@ -8,14 +8,18 @@ export function searchMeals({commit},keyword){
   })
 
 }
-export function searchMealsByLetter({commit},letter){
+export function searchMealsByLetter({ commit }, letter) {
+  console.log('Fetching meals for letter:', letter); 
   axiosClient.get(`search.php?f=${letter}`)
-  .then(({data})=>{
-    commit('setMealsByLetter',data.meals)
-
-  })
-
+    .then(({ data }) => {
+      console.log('Fetched data:', data); 
+      commit('setMealsByLetter', data.meals);
+    })
+    .catch(error => {
+      console.error('Error fetching meals:', error);
+    });
 }
+
 export function searchMealsByIngredient({commit},ingredient){
   axiosClient.get(`filter.php?i=${ingredient}`)
   .then(({data})=>{
