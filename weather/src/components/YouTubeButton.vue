@@ -1,5 +1,5 @@
 <template>
-  <a class="px-3 py-2   text-white rounded border-2 border-red-600 hover:bg-red-600 hover:text-white transition-colors"
+  <a class="px-3 py-2 m-2   text-black rounded border-2 border-red-600 hover:bg-red-600 hover:text-white transition-colors"
     :href="href" 
     target="_blank">
   
