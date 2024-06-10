@@ -11,7 +11,7 @@
 
       <div class="px-3">
         <h3 class="font-semibold">{{ meal.strMeal }}</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut vero mollitia provident possimus.</p>
+        <p>{{ shortInstructions }}</p>
         <div class="flex items-center justify-between">
           <YouTube :href="meal.strYoutube">YouTube</YouTube>
         </div>
@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import YouTube from '@/components/YouTubeButton.vue';
 import MealItemSkeleton from '@/components/Animations/MealItemSkeleton.vue';
 
@@ -34,6 +34,11 @@ const { meal: mealProp } = defineProps({
 
 const loading = ref(true);
 const meal = ref({});
+
+const shortInstructions = computed(() => {
+
+  return meal.value.strInstructions.split(' ').slice(0, 20).join(' ') + ' ...';
+});
 
 onMounted(() => {
   setTimeout(() => {
