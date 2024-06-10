@@ -28,7 +28,7 @@ import MealItemSkeleton from '@/components/Animations/MealItemSkeleton.vue';
 const { meal: mealProp } = defineProps({
   meal: {
     required: true,
-    type: Object
+    // type: Object
   }
 });
 
