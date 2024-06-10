@@ -19,7 +19,7 @@
 
 <script setup>
 import YouTube from '@/components/YouTubeButton.vue';
-
+const loading
 const { meal } = defineProps({
   meal: {
     required: true,
