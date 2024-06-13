@@ -27,3 +27,5 @@ npm run dev
 ```sh
 npm run build
 ```
+![Screenshot 2024-06-13 at 09 37 33](https://github.com/M-erick/Recipe-App/assets/61746940/5765d925-778f-474f-99eb-1870135fb207)
+
