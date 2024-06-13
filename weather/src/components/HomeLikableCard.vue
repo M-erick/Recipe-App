@@ -3,7 +3,7 @@
     <div class="px-3 py-2 relative">
       <router-link to="/">
         <img
-          src="https://plus.unsplash.com/premium_photo-1661902745675-11846e4f9a41?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="../assets/fishSoup.jpeg"
           alt="mealstrMeal"
           class="rounded-xl h-48 w-full object-cover transition-transform duration-300 transform group-hover:scale-105">
       </router-link>
