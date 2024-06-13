@@ -49,7 +49,19 @@ import Slide from '@/components/Slide.vue';
 import Carousel from '@/components/Carousel.vue';
 import HomeLikableCard from '@/components/HomeLikableCard.vue';
 
-const carouselSlides = ['image', 'image1', 'image3'];
+const carouselSlides = [
+  'burger',
+  'fishSoup',
+  'githeri',
+  'lambSoup',
+  'meals',
+  
+  'pancake',
+  'poutine',
+  'sauges.jpeg',
+  'simp',
+  'Spagetti'
+];
 // const slides =  ref([]);
 
 
@@ -57,7 +69,7 @@ const resolvedSlides = ref([]);
 
 const getSlideImage = (slideName) => {
   // Import the image dynamically using import
-  return import(`../assets/${slideName}.png`)
+  return import(`../assets/${slideName}.jpeg`)
     .then(module => module.default)
     .catch(error => {
       console.error(`Error loading slide image: ${error}`);
