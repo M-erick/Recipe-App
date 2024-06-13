@@ -5,7 +5,7 @@
       <router-link :to="{name:'home'}" class="inline-flex items-center h-full px-5">
         
 
-        <img src="../assets/images/cooks.png"  width="50px" height="50px" alt="">
+        <img src="../assets/images/Foodie.png"  width="50px" height="50px" alt="">
         
       </router-link>
       <div class="flex items-center gap-1">
