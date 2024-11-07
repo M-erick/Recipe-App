@@ -17,8 +17,11 @@ jobs:
         with:
           node-version: '18.x'
 
-      - run: npm install
-      - run: npm run build
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
 
   test:
     needs: build
@@ -32,8 +35,11 @@ jobs:
         with:
           node-version: '18.x'
 
-      - run: npm install
-      - run: npm run test
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test  # Make sure you have test scripts or adjust if needed
 
   deploy:
     needs: test
@@ -56,13 +62,16 @@ jobs:
         with:
           node-version: '18.x'
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Build for deployment
-        run: npm install && npm run build
+        run: npm run build
 
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "./dist"  
+          path: "dist"  # Ensure this matches your Vite build output folder
 
       - name: Deploy
         id: deployment
